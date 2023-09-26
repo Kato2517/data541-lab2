@@ -1,0 +1,19 @@
+1. ssh-keygen -t rsa  #generate a new key
+2.ssh-copy-id root@147.182.205.187 #copy the key the server
+3.ssh root@147.182.205.187  #login the server
+ Besides, we need the password  data541UBCO for the first time.
+4.cd ~/.ssh
+cat authorized_keys
+5.env > remote_env.txt
+6. exit #log out
+   scp root@147.182.205.187:~/environment_variables.txt /Users/hexua/541/  # download the public environment to my local file.
+7. env # display my local environment
+8. diff remote_env.txt <(env) >diff.txt # calculate the difference and save it to a file called diff.txt
+ 1) we can see the user name difference:
+	the local machine is my name while the public is root
+similarly,
+ 2) local machine: Local Machine: HOME=/Users/hexua
+    Remote Machine: HOME=/root
+ 3)Local Machine: < PWD=/Users/hexua
+   Remote Machine: > PWD=/root
+    
